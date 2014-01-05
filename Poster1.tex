@@ -1,0 +1,76 @@
+\documentclass[20pt, a0paper, portrait,margin=20mm]{tikzposter} %,blocktitleinnersep=2mm0, blocktitlemaxwidth=10cm ,blockbodyinnersep=8mm,blockverticalspace=15mm,colspace=15mm, subcolspace=8mm
+\newcommand{\bs}{\textbackslash}
+\newcommand{\cmd}[1]{{\bf\color{red}#1}}
+%\usecolortheme{nicolas}
+%\usepackage{tikz}
+%\usepackage{calc,}
+%\usepackage{ifthen} 
+%\usepackage{ae}
+%\usepackage{xstring}
+%\usepackage{etoolbox}
+%\usepackage{xkeyval}
+%\usepackage{graphicx}
+%\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usecolortheme{tikzposter-colorthemes}
+\definecolor{framecolor}{named}{black}
+\settitlebodystyle{rectangular}
+\setblockbodystyle{shaded}
+\title{Walking Speed and Mortality After Stroke}
+\author{Andrew Roberts and Jacques Riad}
+\institute{RJAH, UK and Skovde Hospital, Sweden}
+\begin{document}
+% Title block
+\titleblock[embedded=false,left fig=ORLAUg.png,left fig height=5cm,right fig=vg_logo.png,right fig height=5cm]
+\block{Introduction}{Stroke is the commonest acquired neurological handicap affecting a million patients in the UK with almost 40\% of patients exhibiting spasticity producing poorer function\cite{Watkins2002}. The surgical management of immobility after stroke is surprisingly uncommon given the size of the problem. This study aims to identify a benefit of improving walking speed after stroke.}
+\begin{columns}
+
+% Set first column
+\column{0.48}
+% First column - first block
+\block{Methods}{A consecutive series of patients affected by stroke was examined and walking speed over 5 metre bare foot and in shoes measured between 3 and 5 months after a stroke. Patients with other pathologies; dementia or an inability to walk at all were excluded. At 10 years after the stroke the patients were followed up to identify whether they had survived. Analysis of the relationship between walking speed and mortality was disentangled from the effect of age using a random forest survival technique\cite{Ishwaran2008}. An optimal predictive tree allowed the important variables to be identified and their contributions isolated from other effects.
+Additionally a traditional Cox proportional hazard estimation was performed to demonstrate that the slowest quartile for walking speed differed significantly in their mortality from the fastest quartile.
+\includegraphics[width=1\textwidth]{./tree.png}
+Random Forest Tree for Stroke Data}
+ % First column - second block
+\block{Patients}{Between July and November 2002, 253 consecutive patients with stroke possible for inclusion were registered at Skvode Hospital, Sweden. The patients were examined and diagnosed by a stroke physician according to the WHO criteria.
+\begin{center}
+\includegraphics[width=.8\textwidth]{./poster1-patients.pdf}
+\end{center}
+
+
+\centering
+\caption{Median (Q1/Q3) of Age} \newline
+\begin{tabular}[H]{llll}
+  \hline
+  \hline
+ & Sex &  &  \\ 
+  Status at 10 Years &  & Alive & Dead \\ 
+   & Male & 70.4 (55.0/73.2) & 78.5 (74.1/83.4) \\ 
+   & Female & 68.0 (60.5/73.7) & 78.4 (72.4/81.7) \\ 
+   \hline
+\end{tabular}
+
+
+}
+% Set second column
+\column{0.52}
+% Second column - first block
+\block{Cox Hazard Analysis}{The fastest quartile of patients were compared with the slowest. Slow walking patients had a four fold risk of 10 year mortality compared with the fastest walkers.
+\includegraphics[width=1\textwidth]{./Survival-Speed.pdf}
+}
+
+\block{Random Forest Assessment}{By choosing the best of a large number of randomly generated classification trees the best predictive model can be found and the importance of variables relative to outcome identified.
+\includegraphics[width=.49\textwidth]{./speed-shoes.pdf}
+\includegraphics[width=.49\textwidth]{./age.pdf}
+As walking speed increases mortality reduces in a linear fashion until approximately .85M/s at which point further increases in walking speed are related to only a modest reduction in mortality. An inflexion in the age~mortality relationship occurs at 74 years of age (27000 days). Sex has a minor influence on mortality compared with walking speed.
+
+}
+\end{columns}
+\block{Conclusion}{Walking speed is associated with mortality in patients after stroke. Whether this is a relationship that is amenable to manipulation by altering walking speed is untested. Interestingly in an ROC analysis of the walking speed needed to achieve to avoid dying Stanaway et al identified .84M/sec as the cut-off point separating those destined for an early grave from the long livers\cite{Stanaway2011}. A probable explanation for the relationship between walking speed and mortality is that slow walking speed results from a person having insufficient spare metabolic energy to allow speedy gait. If the subject's energetic reserve is small, otherwise survivable intercurrent illness has a  chance of overwhelming them leading to death\cite{Schrack2010}.
+ }
+\block[r]{}
+{\bibliography{stroke}
+\bibliographystyle{plain}}
+\end{document}
+\bibliography{stroke}
+\bibliographystyle{plain}

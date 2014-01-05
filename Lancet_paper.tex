@@ -1,0 +1,150 @@
+\documentclass[a4paper,12pt]{article}
+\fontencoding{OT1}
+\usepackage{graphicx, subfig, color, marginnote}
+\usepackage[top=1.5cm, bottom=1.5cm, outer=4cm, inner=1cm, heightrounded, marginparwidth=3cm, marginparsep=.5cm]{geometry}
+\author{Andrew Roberts, Jacques Riad, Caroline Hattevig and Hemant Ishwaran}
+\title{Walking speed after stroke predicts 10 year mortality independently of age}
+\usepackage{Sweave}
+\begin{document}
+\maketitle
+\newpage
+\input{Lancet_paper-concordance}
+
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Wed Jan  1 13:49:51 2014
+\begin{table}[ht]
+\centering
+\caption{Median (Q1/Q3) of Age} 
+\begin{tabular}{llll}
+  \hline
+  \hline
+ & Sex &  &  \\ 
+  Status at 10 Years &  & Alive & Dead \\ 
+   & Male & 78.8 (74.0/83.5) & 70.1 (53.2/73.3) \\ 
+   & Female & 78.4 (72.3/82.0) & 66.4 (60.0/72.8) \\ 
+   \hline
+\end{tabular}
+\end{table}% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Wed Jan  1 13:49:51 2014
+\begin{table}[ht]
+\centering
+\caption{Median (Q1/Q3) of Speed in Shoes} 
+\begin{tabular}{llll}
+  \hline
+  \hline
+ & Sex &  &  \\ 
+  Status at 10 Years &  & Alive & Dead \\ 
+   & Male & 0.665 (0.508/0.914) & 0.895 (0.676/1.21) \\ 
+   & Female & 0.840 (0.638/1.03) & 1.13 (0.978/1.31) \\ 
+   \hline
+\end{tabular}
+\end{table}\includegraphics{Lancet_paper-Stroke-to-exam}
+
+\section{Abstract}  \textcolor{red}{an informative and balanced summary of what was done
+and what was found} Five metre walking speed was assessed in and out of shoes in 141 Swedish subjects following stroke. At a minimum of ten years following evaluation their survival was noted. Independently of age at the time of evaluation and sex, walking speed strongly correlated with mortality. At ten years after evaluation those subjects in the slowest quartile were four times more likely to have died than those in the fastest quartile when assessed using a Cox proportional hazard estimation (Wald p<.000014). A random forest survival analysis suggests a linear reduction in mortality with increasing walking speed up to approximately .84 M/sec after which increasing speed led to a more gradual improvement in mortality.
+\section{Introduction}
+\subsection{Background/rationale} \textcolor{red}{Explain the scientific background and rationale 
+for the investigation being reported} Numerous studies have documented the relationship between walking speed and mortality in older and elderly subjects\cite{Dumurgier2009,Stanaway2011,Elbaz2013}. Walking speed in otherwise unimpaired elderly individuals may reflect available energy in excess of that needed for maintenance of life\cite{Schrack2010}. Those individuals who have insufficient free energy to allow walking at useful speed may also lack sufficient metabolic reserves to survive intercurrent disease suggesting a link with increased mortality. 
+The incidence of stroke has decreased over the last 50 years but the seriousness of the disease has not. Stroke is the major cause of disability in the adult population with a life time risk of 14.5\% for men and 16.1\% for women\cite{Carandang2006}. Eighty percent of the patients are older than 65 years. Stroke patients have a high frequency of recurrence and mortality, and stroke occupies over one million hospital days in Sweden each year. Early admission to a highly specialised stroke unit improves the end result. After confirming the diagnosis and providing adequate medical treatment, care is focused on functional training programs that concern daily activities and movement exercises. Early mobilisation decreases risks of complications, contributes to recovery and increases possibility of early return to independent living\cite {Indredavik1998,Joergensen1999d}.
+Apart from residual weakness, foot deformity and stiff knee gait can be a cause of walking impairment after stroke. Even if the clinical findings with mild deformity are subtle they can still cause major functional problems. The identification of patients with treatable walking impairment is rarely considered. Technological investigation of gait that can contribute to a more quantive assessment and provide a guide for treatment is available, but seldom used \cite{Cooper1999j,Fuller2002,Patrick2007}. 
+Both caregivers at the stroke unit, at the rehabilitation unit and in the community are often unaware of possible specific treatment for walking impairment which results in few referrals to the orthopaedic surgeon. There are several different treatment modalities. Stretching, orthosis/braces, botulinum toxin injections or surgery with tendon lengthening and transfer may be indicated\cite{Cooper1999j,Leroux2005a,Morita1998e,Pinzur1986,Reddy2008,Stoquart2008,Bayram2006a}.
+Several authors have reported on quality of life and activity of daily life among stroke survivors. However gait impairment is seldom well described and often limited to identifying whether the individual is able to walk or not. The correlation between quality of life and more detailed walking capacity has not been well investigated in stroke patients\cite{King1996a,Loewen1990,Viitanen1988a}.
+The aim of this study was to identify the relationship between mobility impairment as measured by walking speed with mortality. 
+\par
+Stroke leads to impaired mobility as a result of weakness,control impairment and spasticity. Where walking speed is reduced as a result of neurological injury the patient may have insufficient physical ability to remain active enough to preserve their fitness and metabolic reserves. Comparing the interaction between walking speed and mortality in stroke with that in an unimpaired population should shed light on the possible additive effect of impaired neuromuscular function on the effects of advanced age. Whether strategies to optimise walking speed after stroke can alter mortality requires testing.
+\subsection{Objectives} \textcolor{red}{ State specific objectives, including any prespecified hypotheses} The objective of this study was to analyse previously collected data to evaluate the possibility of constructing a tool that allows the estimation of risk reduction resulting from successful treatment for immobility following stroke. At the start of the study we hypothesised that after stroke walking speed is associated with mortality and that stroke imposes additional risks associated with slow walking compared with slow walking in otherwise unimpaired elderly subjects.
+\section{Methods}
+\subsection{Study design} \textcolor{red}{ Present key elements of study design early in the paper} The study consists of a cohort analysis of walking speed in stroke patients supplemented by a comparison with a large cohort of unimpaired elderly men. 
+\subsection{Setting} \textcolor{red}{ Describe the setting, locations, and relevant dates, including periods of recruitment, exposure, follow-up, and data collection} \marginpar{Jacques, you need to fill in this bit. We can get the details of the CHAMPs group separately or just referrence it.}
+\subsection{Participants}\textcolor{red}{Give the eligibility criteria, and the sources and methods of selection of participants. Describe methods of follow-up}\marginpar{As above}All patients with a stroke, confirmed by a stroke physician and by computer tomography imaging, admitted from July 1st to November 30th, were identified from the hospital medical records and diagnosis register.
+From the list of identified patients, data was obtained from the medical record regarding inclusion and exclusion criteria. Inclusion criteria were first stroke ever, no other disease or obvious injury leading to impaired walking ability. Exclusion criteria were; subarachnoid and subdural haemorrhage, transitory ischemic disease or amaurosis fugax, as well as patients with other diseases or deformities that could influence walking. In addition, cognitive impairment such as senile dementia and living in another region were considered exclusion criteria.
+Patients were informed and asked by letter if they wanted to participate in the follow up study, and those stating willingness to do so were contacted and a date for examination was agreed on.
+
+One specially trained and instructed physiotherapist from the Orthopaedic Department examined and interviewed all patients according to a standardised protocol. Some patients wanted to and were examined in their home and the remaining visited the hospital. 
+\subsection{Variables} \textcolor{red}{Clearly define all outcomes, exposures, predictors, potential confounders, and effect modifiers. Give diagnostic criteria, if applicable}Age, gender, time from stroke to examination, time from stroke to death, survival at 10 years follow up, walking velocity (meter/second) with and without shoes on a 5 meter distance,  were recorded.
+
+The patients walked 5 meters with and without shoes and measurement of speed and cadence was obtained. The positioning of the foot and knee during stance and swing phase was assessed. In stance phase it was determined whether the heel, foot flat or the toes made initial contact with the floor. Additionally it was registered if heel contact occurred at all and if there was knee hyperextension. In swing phase it was noted if the foot in relation to the tibia was dorsally flexed to or above neutral position or all the time in relative equinus/drop foot.                                        
+Muscle tone in the calf muscle on the affected side was registered\cite{Ashworth1964}. Dorsi flexion strength of the foot at the ankle on the affected side was assessed by a “5 point scale” - normal strength=5, good=4, fair=3, poor=2, trace=1 and no trace of contraction=0\cite{MRC1975} Active and passive range of motion from the hip, knee and ankle joints was measured.
+\subsection{Data sources/measurement} \textcolor{red}{For each variable of interest, give sources of data and details of methods of assessment (measurement).}
+\subsection{Bias} \textcolor{red}{Describe any efforts to address potential sources of bias}
+\subsection{Study size} \textcolor{red}{ Explain how the study size was arrived at}\marginpar{I suspect we will have to bluff this one.}
+\subsection{Quantitative variables}\textcolor{red}{ Explain how quantitative variables were handled in the analyses. If applicable, describe which groupings were chosen and why}
+\subsection{Statistical methods}\textcolor{red}{
+(a) Describe all statistical methods, including those used to control for confounding
+(b) Describe any methods used to examine subgroups and interactions
+(c) Explain how missing data were addressed
+(d) If applicable, explain how loss to follow-up was addressed
+(e) Describe any sensitivity analyses}
+\section{Results}
+\subsection{Participants}
+Approval from the local ethical committee was obtained for the study. 
+Skovde County Hospital is the only stroke referral hospital for the 172,000 inhabitants in the region. Between July and November 2002, 253 consecutive patients with stroke possible for inclusion were registered. The patients were examined and diagnosed by a stroke physician according to the WHO criteria \cite{Thorvaldsen1995}. Inclusion criteria were first stroke ever. Patients with subarachnoid and subdural haemorrhage, transitory ischemic disease or amaurosis fugax, as well as patients with other diseases or deformities that could influence walking were excluded. 
+Three months after admission to the stroke unit the patients were contacted by letter and asked for participation. Fifty five (22\%) were dead. Fifty-seven (23\%) patients did not participate in the follow up for different reasons, where 23 did not want to or lacked the energy to participate, 13 patients suffered from senile dementia, and 6 suffered from other conditions (1 hip fracture, 1 dizziness, 1 psychiatric disease, 1 dysphasia and two patients were excluded for unspecified other disease). Six lived in other regions at a long distance. Six could not walk and 3 patients were missed for follow-up.
+The remaining 141 (55\%) were available for follow up after a median of 5,4 months (range 3,0-8,2 months) and gave their written consent to participate (figure~\ref{fig:flowchart}). 
+\begin{figure}[h]
+\includegraphics{Lancet_paper-flowchart}
+\caption{Cohort recruitment flowchart}
+\label{fig:flowchart}
+\end{figure}
+\subsection{Descriptive data} \textcolor{red}{(a) Give characteristics of study participants 
+(eg demographic, clinical, social) and information on exposures and potential confounders
+(b) Indicate number of participants with missing data for each variable of interest
+(c) Summarise follow-up time (eg, average and total amount)}
+
+\subsection{Main Results}\textcolor{red}{
+(a) Give unadjusted estimates and, if applicable, confounder-adjusted estimates and
+their precision (eg, 95pc confidence interval). Make clear which confounders were
+adjusted for and why they were included
+(b) Report category boundaries when continuous variables were categorized
+(c) If relevant, consider translating estimates of relative risk into absolute risk for a
+meaningful time period}
+\subsection{Other analyses} \textcolor{red}{Report other analyses done eg analyses of subgroups and interactions, and sensitivity analyses}
+\section{Discussion}
+\subsection{Key results}  \textcolor{red}{Summarise key results with reference to study objectives}
+\subsubsection{Swedish Cohort}
+\subsubsection{Comparison of the CHAMPs cohort with the Sweish Stroke Cohort}
+\subsection{Limitations}  \textcolor{red}{Discuss limitations of the study, taking into account sources of potential bias or imprecision. Discuss both direction and magnitude of any potential bias} The results of mortality after stroke apply to an elderly Northern European population however the trend towards higher mortality in slow walkers has been demonstrated in other ethnic groups\cite{Chiaranda2013,Ostir2007}. A stable population with a long established disease specific registry allowed a high level of certainty in the identification of status at the point of censoring. A driver for the study was the need for statistical tools to identify the benefit conferred by improving walking speed in patients after stroke. The bias towards older subjects refelects the age profile of stroke but candidates for surgical intervention with an objective of improving gait tend to be younger than the average perhaps reflecting a bias in referral towards younger patients or against offering surgical treatment to patients with other significant comorbidities. At the time of recruitment three months after admission to the stroke unit 14\% of potential subjects were excluded as a result of Demential or other conditions. The exclusion of subjects who had other conditions that affected walking does not significantly confound a study aimed at treating slow walking speed secondary to stroke. 
+\subsection{Interpretation} \textcolor{red}{Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence}
+\subsection{Generalisability} \textcolor{red}{Discuss the generalisability (external validity) of the study results}
+
+\section{Funding} The study was supported by the Research fund at Skaraborg Hospital.
+
+
+% ####### Look at the variables of interest                     ########################
+% Ss.obj <- rfsrc(Surv(remaining_life, Status) ~ ., Swedish_stroke, nsplit = 30, ntree = 1000)
+% library(XML) # required to export Tree as a .zip file. 
+% rf2rfz(Ss.obj, forestName = "Swedish_stroke")
+% pdf(file="./Variables.pdf",height=8,width=11,onefile=TRUE)
+% plot.variable(Ss.obj, partial = TRUE, smooth.lines = TRUE,
+%               xvar.names="speed_shoes",main="Dr Riad's Stroke Data",)
+% plot.variable(Ss.obj, partial = TRUE, smooth.lines = TRUE,
+%               xvar.names="Sex",main="Dr Riad's Stroke Data",)
+% plot.variable(Ss.obj, partial = TRUE, smooth.lines = TRUE,
+%               xvar.names="Age_at_exam",main="Dr Riad's Stroke Data",)
+% dev.off()
+% Ss.max <- max.subtree(Ss.obj)
+% print(round(Ss.max$order, 3))
+% ####### Here is a cut down version of the data                #####################
+% Swedish_stroke2 <-Swedish_stroke[,c(-1,-3,-4,-6,-7,-9)]
+% names(Swedish_stroke2)[5] <-"time"
+% names(Swedish_stroke2)[3] <-"status"
+% Ss2.obj <- rfsrc(Surv(time, status) ~ ., Swedish_stroke2, nsplit = 30, ntree = 1000)
+% plot.survival(rfsrc(Surv(time, status)~ ., Swedish_stroke2), cens.model = "km",collapse=TRUE)
+% ####### Sex Effect                                            ########################################
+% library(survival)
+% pdf(file="./PDF_Output/Survival_by_Sex.pdf",width=11,height=8)
+% plot(survfit(Surv(as.numeric(time/365),status)~Sex,data=Swedish_stroke2),
+%      col=c("blue","pink"),conf.int=FALSE,main="Survival by Sex",
+%      ylab="Proportion Surviving",xlab="Years Post Examination")
+% legend("bottomleft", legend = c("Male", "Female"), lty = c(1,2), col = c("blue","pink"), lwd = 1, cex = .8)
+% dev.off()
+% ####### Sex Effect                                            ##################
+% plot.survival(rfsrc(Surv(time, status)~ ., Swedish_stroke2), cens.model = "km",collapse=TRUE)
+% 
+% pdf(file="Variable_plots.pdf",width=11,height=8)
+% plot.variable(Ss2.obj, partial = TRUE, smooth.lines = TRUE,main="Dr Riad's Stroke Data")
+% dev.off()
+
+\bibliography{stroke}
+\bibliographystyle{plain}
+\end{document}

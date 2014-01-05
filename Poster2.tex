@@ -1,0 +1,69 @@
+\documentclass[20pt, a0paper, portrait,margin=20mm]{tikzposter} \newcommand{\bs}{\textbackslash}
+\newcommand{\cmd}[1]{{\bf\color{red}#1}}
+\usecolortheme{tikzposter-colorthemes}
+\definecolor{framecolor}{named}{black}
+\settitlebodystyle{rectangular}
+\setblockbodystyle{shaded}
+\title{Outpacing Death: Surgey to Aid Walking After Stroke}
+\author{Andrew Roberts and Jacques Riad}
+\institute{RJAH, UK and Skovde Hospital, Sweden}
+\begin{document}
+% Title block
+\titleblock[embedded=false,left fig=ORLAUg.png,left fig height=5cm,right fig=vg_logo.png,right fig height=5cm]
+\block{Introduction}{Slow walking speed is associated with earlier death after stroke\cite{Roberts2014a}. If walking speed can be beneficially influenced by treatment the possibility of a reduction in mortality exists. Analysis of an existing dataset of survival after stroke allows, for each age group and sex, the effect of an improvement in speed to be expressed as a possible reduction in mortality.}
+\begin{columns}
+
+% Set first column
+\column{0.48}
+% First column - first block
+\block{Mortality Estimator}{A random forest survival analysis allows the construction of a predictive tree with decision nodes that produce an optimised estimation of outcome (survival)\cite{Ishwaran2008}. A hypothetical subject with predefined characteristics can be run through the predictive tree to give an individualised probability of survival. An R program\cite{R-Project2012} was constructed to run subjects of both sexes; all relevant ages and all walking speeds through the tree to give, for each sex and age a smoothed speed - mortality curve\cite{Cleveland1981}.
+\includegraphics[width=1\textwidth]{./Female_curves_76.pdf}
+Once a smooth curve had been derived, mortality reductions can be calculated for each initial speed from the survival data over a range of improved/worsened speeds. With the assumption that negative walking speeds are not possible (where deterioration > initial speed) a heat map of mortality reduction(increase) for each initial walking speed can be produced
+\includegraphics[width=1\textwidth]{./female_heatmap.pdf}
+Whilst the heatmap applies to a specific age and sex combination for a selection of speeds it is possible to use the technique at a population level to derive a mean mortality reduction benefit if the intervention is applied to a group of individuals making it a potential tool for service commissioning.
+}
+% end of First column - first block
+% Set second column
+\column{0.52}
+% Second column - first block
+\block{Patients}{Thirteen patients were identified from gait laboratory records who had received treatment for slow walking speed after a stroke. Surgical treatment for stroke consisted of lengthening the heelcord and rebalancing tendons around the foot to enable stability in stance and preposition of the foot at initial contact. A secondary benefit of rebalancing the foot was an improve kinetics at the knee.\newline\newline
+\centering
+\caption{Median (SD) of Age} 
+\begin{tabular}{lll}
+  \hline
+  \hline
+Sex & Surgery &  \\ 
+  F & N & - (-) \\ 
+   & Y & 0.182 (0.238) \\ 
+  M & N & 0.0300 (-) \\ 
+   & Y & 0.166 (0.0615) \\ 
+   \hline
+\end{tabular}
+\centering
+\caption{Increase (SD) in Speed} 
+\begin{tabular}{lll}
+  \hline
+  \hline
+Sex & Surgery &  \\ 
+  F & N & - (-) \\ 
+   & Y & 0.182 (0.238) \\ 
+  M & N & 0.0300 (-) \\ 
+   & Y & 0.166 (0.0615) \\ 
+   \hline
+\end{tabular}
+\newline
+Modest increases in walking speed were noted along with some patients who could not walk being able to do so. 
+}
+
+\block{Possible Mortality Consequence of Treatment}{
+\includegraphics[width=1\textwidth]{Speed-Stroke-Model.pdf}
+
+}
+\end{columns}
+\block{Conclusion}{Surgical management of the lower limb can produce modest improvements in walking speed after stroke. Unbalanced muscle action leading to coronal plane deformity and instability with or without pain renders walking difficult. Equinus contracture renders the foot unstable and may lead to unwanted hyperextesion at the knee with secondary hip flexion.
+If improvements in walking speed enables maintenence of better fitness and metabolic reserve an improvement in mortality may follow\cite{Schrack2010a}. Further work to identify the energy consumption before and after stroke surgery would be needed to explore this possibility.}
+ 
+\block[r]{}
+{\bibliography{stroke}
+\bibliographystyle{plain}}
+\end{document}

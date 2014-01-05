@@ -1,0 +1,205 @@
+\documentclass{beamer}
+\usetheme{Pittsburgh} %White plain with round dots for bullets
+\setbeamercolor{background}{fg=yellow!80!black,bg=blue!20!white}
+\usecolortheme {seagull}
+\useinnertheme {rectangles}
+\useoutertheme{sidebar}
+\usecolortheme {wolverine}
+
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{graphics}
+%\usepackage{media9}
+\usepackage[english]{babel}
+\title{Walking Speed and Mortality After Stroke}
+\author{J Riad \& A Roberts}
+\institute{Skovde Hospital, Sweden \& RJAH, UK}
+\usepackage{Sweave}
+\begin{document}
+\input{Stroke-Beamer-concordance}
+\section*{Outline}
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Stroke}
+\begin{frame}\frametitle{Stroke}
+\begin{itemize}
+\item 1 million sufferers in UK
+\item 40\% have spasticity affecting function
+\item Walking very often impaired
+\item But not referred for treatment!
+\end{itemize}
+\end{frame}
+\begin{frame}\frametitle{Key Problems}
+\begin{itemize}
+\item Spasticity - Stiff knee gait
+\item Equinus - Poor clearance and instability
+\item Equinus - Knee hyperextension
+\item Foot varus - Instability
+\item And often pain.
+\end{itemize}
+\end{frame}
+%%%
+% \begin{frame}
+%   \frametitle{video}
+% \begin{center}
+% \href{run:foot_film.runfile.sh}{\includegraphics[scale=0.25]{Rasch-FAQ.png}}
+% \end{center}
+% \end{frame}
+
+\section{So What?}
+\begin{frame}\frametitle{Does Walking Matter?}
+\begin{itemize}
+\item ICF Perspective
+\begin{itemize}
+\item Structure
+\item Function
+\item Participation
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}\frametitle{Does Walking Matter?}
+\begin{itemize}
+\item Maintaining fitness
+\item Survival related to walking speed
+\item Stanaway et al 2011
+\item Schrack et al 2010
+\end{itemize}
+\end{frame}
+\section{Swedish Data}
+\begin{frame}\frametitle{Does Walking Speed After Stroke Affect Mortality?}
+	\begin{columns}
+		\begin{column}{5cm}
+		\begin{itemize}
+		\item Swedish data
+		\item 5M walking speed
+		\item 10 year survival identified
+		\end{itemize}
+		\end{column}
+		\begin{column}{5cm}
+    \includegraphics[width=5cm]{Lancet_paper-flowchart.pdf}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}\frametitle{Assessment (n=141)}
+	\begin{columns}
+		\begin{column}{5cm}
+		\begin{itemize}
+		\item Visited by physiotherapist.
+		\item Walking speed barefoot and in shoes
+		\item ADL / Barthel categorisation
+		\end{itemize}
+		\end{column}
+		\begin{column}{5cm}
+    \includegraphics[width=5cm]{Lancet_paper-Stroke-to-exam.pdf}
+		\end{column}
+	\end{columns}
+
+\end{frame}
+\begin{frame}\frametitle{Follow Up at 10 Years (n=138)}
+			\begin{itemize}
+			\item Survival status and date of death
+			\item Three subjects untraceable
+			\end{itemize}
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Sun Dec 29 20:09:52 2013
+\begin{table}[ht]
+\centering
+\caption{Mean (SD) of Age} 
+\begin{tabular}{llll}
+  \hline
+  \hline
+ & Sex &  &  \\ 
+  Status at 10 Years &  & Alive & Dead \\ 
+   & Male & 63.5 (14.3) & 78.4 (7.30) \\ 
+   & Female & 66.6 (9.23) & 77.3 (7.36) \\ 
+   \hline
+\end{tabular}
+\end{table}\end{frame}
+\begin{frame}\frametitle{Speed and Mortality}
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Sun Dec 29 20:09:52 2013
+\begin{table}[ht]
+\centering
+\caption{Mean (SD) of Speed in Shoes} 
+\begin{tabular}{llll}
+  \hline
+  \hline
+ & Sex &  &  \\ 
+  Status at 10 Years &  & Alive & Dead \\ 
+   & Male & 0.906 (0.320) & 0.698 (0.305) \\ 
+   & Female & 1.08 (0.330) & 0.832 (0.320) \\ 
+   \hline
+\end{tabular}
+\end{table}\end{frame}
+\begin{frame}\frametitle{Does it Really Make a Difference?}
+\begin{itemize}
+  \item Take the fastest and slowest quartiles
+  \item Plot their survival curves
+  \item Use a Cox Proportional Hazard analysis
+  \item Assess significance (Wald Statistic)
+\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Cox Proportional Hazard Analysis}
+\includegraphics[height=8cm]{Survival-Speed.pdf}
+\end{frame}
+\section{Random Forest Survival Analysis}
+\begin{frame}\frametitle{What is Random Forest Survival Analysis?}
+\begin{itemize}
+  \item Classification technique taking 37\% of data as test set
+  \item Classification repeated many times
+  \item Best classification tree used
+  \item \emph{V}ariable \emph{IMP}ortance or maximum subtree selection of variables to use
+  \item Works well for high dimensional data sets
+\end{itemize}
+\end{frame}
+\begin{frame}\frametitle{Classification as a Tree}
+  \includegraphics[width=1\textwidth]{tree.png}
+\end{frame}
+\begin{frame}\frametitle{Age as a Classifier}
+\includegraphics{Stroke-Beamer-agevar}
+\end{frame}
+\begin{frame}\frametitle{Sex as a Classifier}
+\includegraphics{Stroke-Beamer-sexvar}
+\end{frame}
+\begin{frame}\frametitle{Speed Barefoot as a Classifier}
+\includegraphics{Stroke-Beamer-speedbfvar}
+\end{frame}
+\begin{frame}\frametitle{Speed in Shoes as a Classifier}
+\includegraphics{Stroke-Beamer-speedshvar}
+\end{frame}
+\section{So What?}
+\begin{frame}\frametitle{Bad Luck or An Opportunity}
+\begin{itemize}
+  \item Current thinking generally sees risk of death as unalterable
+  \item Epidemiological papers show risk not opportunities
+  \item A working model needed for Stroke-Senility-Mortality
+\end{itemize}
+\includegraphics{reaper.png}
+\end{frame}
+\begin{frame}\frametitle{Entering Death's Dominion}
+\includegraphics{Speed-Stroke-Model.pdf}
+\end{frame}
+\begin{frame}\frametitle{Avoiding Death's Dominion}
+\includegraphics{Speed-Stroke-Rx-Model.pdf}
+\end{frame}
+\begin{frame}\frametitle{Mapping Benefit from Improving Speed}
+\includegraphics[width=1\textwidth]{Risk-Reduction.png}
+\end{frame}
+\section{Conclusion}
+\begin{frame}\frametitle{Conclusion}
+\begin{itemize}
+  \item Slow walking after stroke predicts higher mortality
+  \item Improving walking speed \emph{might} reduce mortality
+  \item Further work needed....
+\end{itemize}
+\end{frame}
+
+
+
+
+\end{document}
