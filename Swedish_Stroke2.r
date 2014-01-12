@@ -162,7 +162,6 @@ age2 <-seq(20000,35000,300)
 speed2 <-seq(0,1.5,.05)
 bigGirls <-matrix(numeric(0), 51,31) # Make a blank 51*31 matrix
 bigBoys <-matrix(numeric(0), 51,31) # Make a blank 51*31 matrix
-
 for(i in 1:length(age2)){ # Female
   newData[1,3]<-as.difftime(age2[i],units="days")
   newData[1,1]<-as.integer(1)
@@ -184,12 +183,13 @@ for(i in 1:length(age2)){ # Male
 save(bigBoys,bigGirls,file="Big_risk_matrix_small.rData")
 ####### Produce fine grain heatmaps                           ##############################
 load(file="Big_risk_matrix_small.rData")
-
+blue.spec <-c("#f7fbff","#deebf7","#c6dbef","#9ecae1","#6baed6","#6baed6","#4292c6","#2171b5","#08519c","#08306b")
+#blue.spec <-c(#f7fbff,#deebf7,#c6dbef","#9ecae1","#6baed6","#6baed6","#4292c6","#2171b5","#08519c","#08306b")
 pdf(file="Big_Heatmaps.pdf",onefile=TRUE,width=14,height=8)
 emptyBB <-format(bigBoys,digits=2)
 labR<-age2
 labC<-speed2
-heatmap.2(bigBoys, Rowv=FALSE, Colv=FALSE, col=rainbow(32, alpha=1), dendrogram='none', 
+heatmap.2(bigBoys, Rowv=FALSE, Colv=FALSE, col=blue.spec, dendrogram='none', 
           cellnote=emptyBB, notecol="black", trace='none',
           notecex=.6, scale="none", density.info="none",
           main="Mortality Post Stroke by Age and Speed (Males)",
@@ -338,7 +338,7 @@ for(i in 1:length(age2)){
  save(low,file=ti2)
   par(new=FALSE)}
 dev.off()
-###### Sandbox                                                #######################################################
+####### Sandbox                                               #######################################################
 sexlow<-"F"
 agelow<-70
 fname <-str_c("mort",sexlow,agelow,".rData")
@@ -393,7 +393,7 @@ heatmap.2(empty, Rowv=FALSE, Colv=FALSE, dendrogram='none',
           xlab="Initial Speed (M/s)",ylab="Speed Change Post Op (M/s)",
           margins = c(3.5,3.8),
           labRow=labR, labCol=labC)
-###### Look at this in 3D                                     ################
+####### Look at this in 3D                                    ################
 library(scatterplot3d)
 library(sculpt3d)
 library(plot3D)
